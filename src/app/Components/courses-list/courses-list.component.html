@@ -1,0 +1,44 @@
+<div class="row mt-5">
+  <div class="col">
+    <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalShoes" >New Shoes</button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Code</th>
+          <th scope="col">Name</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let course of curso;  index as i">
+
+          <th scope="row"> {{i+1}}</th>
+          <td>{{course.code}}</td>
+          <td>{{course.name}}</td>
+          <td>{{course.description}}</td>
+          <!-- <td *ngIf="shoes.userUid == userUid || isAdmin == true; else noOwner"> 
+            <button class="btn btn-primary" (click)="onPreUpdate(shoes)" data-toggle="modal" data-target="#modalShoes">Update</button>
+          </td> -->
+          <ng-template #noOwner>
+            <td>
+              <a  class="btn btn-primary" disable ="true">Update</a>
+            </td>
+          </ng-template>
+          <td *ngIf="isAdmin == true; else noAdmin">
+            <a  class="btn btn-danger" (click)="onDeleteShoes(shoes.id)">Delete</a>
+          </td>
+          <ng-template #noAdmin>
+            <td>
+              <a  class="btn btn-danger" disable = "true">Delete</a>
+            </td>
+          </ng-template>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

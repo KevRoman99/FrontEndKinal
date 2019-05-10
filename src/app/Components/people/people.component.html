@@ -1,0 +1,272 @@
+<br>
+<div class="alert alert-danger" *ngIf="alerta == true"><a href="#" class="alert-link"></a>Debes de ingresar todos los datos </div>
+<h1 class="display-4">Ingrese sus datos</h1>
+<div style="width:80%; margin-left:10%">
+   <!-- <div style="width:40%; margin-left:27%">-->
+<hr class="hola">
+</div>
+<div class="shadow p-3 mb-5 bg-white rounded" style="width:1390px; margin-left: 4%">
+
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-4">
+            <form name="form" [formGroup]="form">
+                <input class="form-control" formControlName="firstName" [ngClass]="{'is-invalid': 
+                form.get('firstName').touched && form.get('firstName').invalid}" required='' type='text' [(ngModel)]="person.firstName">
+                <label for="firstName" alt='Primer nombre' placeholder='Primer nombre'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese el Primer Nombre
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col md-4">
+            <form>
+                <input required='' type='text' [(ngModel)]="person.middleName" [ngModelOptions]="{standalone: true}">
+                <label alt='Segundo nombre' placeholder='Segundo nombre'></label>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-4">
+            <form name="form" [formGroup]="form">
+                <input class="form-control" formControlName="firstLastName" [ngClass]="{'is-invalid':
+                form.get('firstLastName').touched && form.get('firstLastName').invalid}" required='' type='text' [(ngModel)]="person.firstLastName"/>
+                <label for="firstLastName" alt='Primer Apellido' placeholder='Primer Apellido'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese el Primer Apellido
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col md-4">
+            <form>
+                <input required='' type='text' [(ngModel)]="person.secondLastName"[ngModelOptions]="{standalone: true}">
+                <label alt='Segundo apellido' placeholder='Segundo apellido'></label>
+            </form>      
+        </div>
+        <div class="col md-3">
+            <form name="form" [formGroup]="form">
+                <select class="form-control" formControlName="gender" [ngClass]="{'is-invalid':
+                form.get('gender').touched && form.get('gender').invalid}" required="" class="custom-select" [(ngModel)]="person.gender"> 
+                    <option value="" hidden></option>
+                    <option value="MASCULINO">MASCULINO</option>
+                    <option value="FEMENINO">FEMENINO</option>
+                </select>
+                <label for="gender" alt='Genero' placeholder='Genero'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Seleccione el Genero
+                    </div>
+                </div>
+            </form>      
+        </div>
+        <div class="col md-3">
+            <form name="form" [formGroup]="form">
+                <select class="form-control" formControlName="civilStatus" [ngClass]="{'is-invalid':
+                form.get('civilStatus').touched && form.get('civilStatus').invalid}" required="" class="custom-select" [(ngModel)]="person.civilStatus">
+                    <option value="" hidden></option>
+                    <option *ngIf="person.gender == '' || person.gender == 'MASCULINO'" value="CASADO">Casado</option>
+                    <option *ngIf="person.gender == '' || person.gender == 'MASCULINO'" value="SOLTERO">Soltero</option>
+                    <option *ngIf="person.gender == 'FEMENINO'" value="CASADA">Casada</option>
+                    <option *ngIf="person.gender == 'FEMENINO'" value="SOLTERA">Soltera</option>
+                </select>
+                <label for="civilStatus" alt='Estado Civil' placeholder='Estado CIvil'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Seleccione el Estado Civil
+                    </div>
+                </div>
+            </form>     
+        </div>
+        <div class="col md-4">
+            <form name="form" [formGroup]="form">
+                <input class="form-control" formControlName="marriedName" [ngClass]="{'is-invalid':
+                form.get('marriedName').touched && form.get('marriedName').invalid}" *ngIf="person.gender == 'FEMENINO' && person.civilStatus == 'CASADA'" required='' type='text' [(ngModel)]="person.marriedName">
+                <label for="marriedName" alt='Apellido de casada' placeholder='Apellido de casada'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese el Apellido de Casada
+                    </div>
+                </div>
+            </form>           
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-3">
+            <form name="form" [formGroup]="form">
+                <input class="form-control" formControlName="birthname" [ngClass]="{'is-invalid':
+                form.get('birthname').touched && form.get('birthname').invalid}" required="" type='date' [(ngModel)]="person.birthname">
+                <label for="birthname" alt='Fecha de nacimiento' placeholder='Fecha de nacimiento'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese la Fecha de Nacimiento
+                    </div>
+                </div>
+            </form>   
+        </div>
+        <div class="col md-3">
+            <form name="form" [formGroup]="form">
+                <select class="form-control" formControlName="religion" [ngClass]="{'is-invalid':
+                form.get('religion').touched && form.get('religion').invalid}" required="" class="custom-select" [(ngModel)]="person.religion">
+                    <option value="" hidden></option>
+                    <option value="CATOLICO">Catolico</option>
+                    <option value="EVANGELICO">Mormon</option>
+                    <option value="ATEO">Ateo</option>
+                    <option value="MORMON">Mormon</option>
+                    <option value="BUDISTA">Budista</option>
+                    <option value="TESTIGO DE JEHOVA">Testigo de Jehova</option>
+                </select> 
+                <label for="religion" alt='Religion' placeholder='Religion'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese la Religion
+                    </div>
+                </div>
+            </form>     
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-2">
+            <form name="form" [formGroup]="form">
+                <input class="form-control" id="email" formControlName="email" [(ngModel)]="person.email" required="" type='text' id="input" style="width: 89%"/>
+                <label for="email" alt='Correo electronico' placeholder='Correo electronico' style="width: 20%; position: absolute;"></label> 
+                <button type="button" class="btn btn-outline-info" style="margin-left:5%;margin-bottom: 1%" (click)="addEmail()" >+</button>
+            </form>  
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="conteiner">
+    <div class="row">
+        <br>
+        <div class="col md-2">
+            <form name="form" [formGroup]="form">
+                <select class="form-control" formControlName="department" [ngClass]="{'is-invalid':
+                form.get('department').touched && form.get('department').invalid}" required="" class="custom-select" [(ngModel)]="person.department">
+                    <option value="" hidden></option>
+                    <option value="ALTA VERAPAZ">Alta Verapaz</option>
+                    <option value="BAJA VERAPAZ">Baja Verapaz</option>
+                    <option value="CHIMALTENANGO">Chimaltenango</option>
+                    <option value="PETEN">Petén</option>
+                    <option value="EL PROGRESO">El Progreso</option>
+                    <option value="QUICHE">Quiché</option>
+                    <option value="ESCUINTLA">Escuintla</option>
+                    <option value="GUATEMALA">Guatemala</option>
+                    <option value="IZABAL">Izabal</option>
+                    <option value="JALAPA">Jalapa</option>
+                    <option value="JUTIAPA">Jutiapa</option>
+                    <option value="QUETZALTENANGO">Quetzaltenango</option>
+                    <option value="RETALHULEU">Retalhuleu</option>
+                    <option value="SACATEPEQUEZ">Sacatepéquez</option>
+                    <option value="SAN MARCOS">San Marcos</option>
+                    <option value="SANTA ROSA">Santa Rosa</option>
+                    <option value="SOLOLA">Sololá</option>
+                    <option value="SUCHITEPEQUEZ">Suchitepéquez</option>
+                    <option value="TOTONICAPAN">Totonicapán</option>
+                    <option value="ZACAPA">Zacapa</option>
+                </select> 
+                <label for="department" alt='Departamento' placeholder='Departamento'></label> 
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese el Departamento
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col md-2">
+            <form name="form" [formGroup]="form">
+                <input class="form-control" formControlName="municipality" [ngClass]="{'is-invalid':
+                form.get('municipality').touched && form.get('municipality').invalid}" required='' type='text' [(ngModel)]="person.municipality"/>
+                <label for="municipality" alt='Municipio' placeholder='Municipio'></label>  
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese el Municipio
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col md-2">
+            <form name="form" [formGroup]="form">
+                <input class="form-control" formControlName="zone" [ngClass]="{'is-invalid':
+                form.get('zone').touched && form.get('zone').invalid}" required='' type='text'[(ngModel)]="person.zone">
+                <label for="zone" alt='Zona' placeholder='Zona'></label> 
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese la zona
+                    </div>
+                </div>
+            </form> 
+        </div>
+        <div class="col md-2">
+            <input required='' type='text' [(ngModel)]="person.residential"[ngModelOptions]="{standalone: true}">
+            <label alt='Colonia o residencial' placeholder='Colonia o residencial'></label>    
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-3">
+            <input required='' type='text' [(ngModel)]="person.avenue"[ngModelOptions]="{standalone: true}">
+            <label alt='Avenida' placeholder='Avenida'></label> 
+        </div>
+        <div class="col md-3">
+            <input required='' type='text' [(ngModel)]="person.street"[ngModelOptions]="{standalone: true}">
+            <label alt='Calle' placeholder='Calle'></label>      
+        </div>
+        <div class="col md-3">
+            <input required='' type='text' [(ngModel)]="person.sector"[ngModelOptions]="{standalone: true}">
+            <label alt='Manzana' placeholder='Manzana'></label>      
+        </div>
+        <div class="col md-3">
+            <input required='' type='text' [(ngModel)]="person.number"[ngModelOptions]="{standalone: true}">
+            <label alt='Número de casa' placeholder='Número de casa'></label>     
+        </div>
+        <div class="col md-2">
+            <form>
+                <input required='' type='text' [(ngModel)]="person.other" [ngModelOptions]="{standalone: true}" >
+                <label alt='Otros requerimientos' placeholder='otros requerimientos'></label>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-4">
+            <input required='' type='text' maxlength="8"  [(ngModel)]="person.house"[ngModelOptions]="{standalone: true}">
+            <label alt='Telefono de residencia' placeholder='Telefono de residencia'></label>
+        </div>
+        <div class="col md-4">
+            <input required='' type='text' maxlength="8"  [(ngModel)]="person.cellphone"[ngModelOptions]="{standalone: true}">
+            <label alt='Celular' placeholder='Celular'></label>     
+        </div>
+        <div class="col md-4">
+            <input [(ngModel)]="person.otherNumber" name="other" maxlength="8"  required=""  type='text' id="input" style="width: 85%"[ngModelOptions]="{standalone: true}">
+            <label alt='Otro' placeholder='Otro' style="width: 20%; position: absolute;"></label> 
+            <button type="button" class="btn btn-outline-info" style="margin-left:5%; margin-bottom: 1%"  (click)="addPhone()">+</button>
+        </div>
+    </div>
+</div>
+<br>
+<button type="button" (click)="onSumit()" class="btn btn-outline-primary">Enviar formulario</button>
+</div>

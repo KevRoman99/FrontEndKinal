@@ -1,0 +1,74 @@
+<br>
+<h1 class="display-4">Unidades educativas</h1>
+<div style="width:50%; margin-left:24%">
+   <!-- <div style="width:40%; margin-left:27%">-->
+<hr class="class">
+</div>
+<div class="shadow p-3 mb-5 bg-white rounded" style="width:1000px; margin-left: 17%">
+
+    <div class="conteiner">
+        <div class="row">
+            <div class="col md-4">
+                <br>
+                <form name="form" [formGroup]="form">
+                    <input class="form-control" required='' formControlName="academicUnit" type='text'  [ngClass]="{'is-invalid':
+                    form.get('academicUnit').touched && form.get('academicUnit').invalid}" [(ngModel)]="academicunits.academicUnit">
+                    <label for="academicUnit"lt='Nombre de la unidad' placeholder='Nombre de la unidad'></label>
+                    <div class="invalid-feedback">
+                        <div>
+                            Ingrese el nombre de la unidad academica
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col md-4">
+                <br>
+            </div>
+        </div>
+    </div>
+<hr>
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-4">
+            <br>
+            <form name="form" [formGroup]="form">
+                <input class="form-control" required='' formControlName="code" type='text'  [ngClass]="{'is-invalid':
+                form.get('code').touched && form.get('code').invalid}" [(ngModel)]="academicunits.code" >
+                <label alt='Codigo del Curso' placeholder='Codigo del Curso'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese el codigo de la unidad academica
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col md-4">
+            <br>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-4">
+            <form name="form" [formGroup]="form">
+                <input class="form-control" formControlName="description" [ngClass]="{'is-invalid': 
+                form.get('description').touched && form.get('description').invalid}" required='' type='text' [(ngModel)]="academicunits.description" >
+                <label alt='Descripcion de la unidad' placeholder='Descripcion de la unidad'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese una descripcion
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col md-4">
+        </div>
+    </div>
+</div>
+<hr>
+<div style="text-align: right">
+<button type="button" (click)='onSumit()' class="btn btn-outline-primary">Guardar unidad</button>
+</div>
+
+</div>

@@ -1,0 +1,75 @@
+<br>
+<h1 class="display-4">Ingrese la Carrera</h1>
+<div style="width:50%; margin-left:24%">
+   <!-- <div style="width:40%; margin-left:27%">-->
+<hr class="class">
+</div>
+<div class="shadow p-3 mb-5 bg-white rounded" style="width:1000px; margin-left: 18%">
+
+    <div class="conteiner">
+        <div class="row">
+            <div class="col md-4">
+                <br>
+                <form name="form" [formGroup]="form">
+                    <input class="form-control" formControlName="name" [ngClass]="{'is-invalid': 
+                    form.get('name').touched && form.get('name').invalid}" required='' type='text' [(ngModel)]="career.name">
+                    <label alt='Nombre de la Carrera' placeholder='Nombre de la Carrera'></label>
+                    <div class="invalid-feedback">
+                        <div>
+                            Ingrese el nombre de la Carrera
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col md-4">
+                <br>
+            </div>
+        </div>
+    </div> 
+<hr>
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-4">
+            <br>
+            <form name="form" [formGroup]="form">
+                <input class="form-control" formControlName="code" [ngClass]="{'is-invalid': 
+                form.get('code').touched && form.get('code').invalid}" required='' type='text' [(ngModel)]="career.code">
+                <label alt='Codigo de la Carrera' placeholder='Codigo de la Carrera'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese el codigo de la Carrera
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col md-4">
+            <br>
+        </div>
+    </div>
+</div>    
+<hr>
+<div class="conteiner">
+    <div class="row">
+        <div class="col md-4">
+            <br>
+            <form name="form" [formGroup]="form">
+                <input  class="form-control" formControlName="description" [ngClass]="{'is-invalid': 
+                form.get('description').touched && form.get('description').invalid}" required='' type='text' [(ngModel)]="career.description">
+                <label alt='Descripcion de la Carrera' placeholder='Descripcion de la Carrera'></label>
+                <div class="invalid-feedback">
+                    <div>
+                        Ingrese la descripcion
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col md-4">
+            <br>
+        </div>
+    </div>
+</div>
+<hr>
+<div style="text-align: right">
+<button type="button" (click)="onSumit()" class="btn btn-outline-primary">Guardar Carrera</button>
+</div>
+</div>

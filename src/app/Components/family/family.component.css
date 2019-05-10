@@ -1,0 +1,13 @@
+.hola{
+    width: 100%;
+}
+
+h1{
+    margin-left: 35%
+}
+
+@media (max-width: 600px) {
+    body {
+      margin: 0 0 0 0;
+    }
+  }

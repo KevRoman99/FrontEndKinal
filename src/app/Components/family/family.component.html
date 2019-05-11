@@ -1,20 +1,20 @@
 <br>
 <h1 class="display-4">Ingrese su familia</h1>
-<div style="width:80%; margin-left:10%">
+<div style="width:55%; margin-left:22%">
    <!-- <div style="width:40%; margin-left:27%">-->
 <hr class="hola">
 </div>
-<div class="shadow p-3 mb-5 bg-white rounded" style="width:1390px; margin-left: 6%">
+<div class="shadow p-3 mb-5 bg-white rounded" style="width:60%; margin-left: 20%">
 
 <div class="conteiner">
     <div class="row">
         <div class="col md-4">
-            <h5><span class="badge badge-primary">Agregar hijo(s)</span></h5>
+            <h5><span class="badge badge-light">Agregar hijo(s)</span></h5>
             <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-search"></i></span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input [ngModel]="family.son" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                 </div>
         </div>
         <div class="col md-4">
@@ -28,12 +28,12 @@
 <div class="conteiner" style="width: 49%">
     <div class="row">
         <div class="col md-4">
-            <h5><span class="badge badge-primary">Agregar padre</span></h5>
+            <h5><span class="badge badge-light">Agregar padre</span></h5>
             <div class="input-group mb-3">
                     <div class="input-group-prepend" >
                         <span class="input-group-text"><i class="fas fa-search"></i></span>
                     </div>
-                    <input type="text" class="form-control" style="width:50%">
+                    <input [ngModel]="family.father" type="text" class="form-control" style="width:50%">
                 </div>
         </div>
     </div>
@@ -43,12 +43,12 @@
 <div class="conteiner" style="width: 49%">
     <div class="row">
         <div class="col md-4">
-            <h5><span class="badge badge-primary">Agregar madre</span></h5>
+            <h5><span class="badge badge-light">Agregar madre</span></h5>
             <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-search"></i></span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input [ngModel]="family.mother" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                 </div>
         </div>
     </div>
@@ -58,12 +58,12 @@
 <div class="conteiner">
     <div class="row">
         <div class="col md-4">
-            <h5><span class="badge badge-primary">Agregar encargado(s)</span></h5>
+            <h5><span class="badge badge-light">Agregar encargado(s)</span></h5>
             <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-search"></i></span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input [ngModel]="family.inCharge" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                 </div>
         </div>
         <div class="col md-4">
@@ -75,8 +75,50 @@
 <br>
 
 
-
-<br>
-<button type="button" class="btn btn-outline-primary">Enviar formulario</button>
+<button [ngModel]="save()" type="button" class="btn btn-outline-primary">Enviar formulario</button>
 
 </div>
+
+
+      <button hidden="true" data-toggle="modal" data-target="#exampleModalCenter"></button>
+
+      <button id="openModal" #openModal [hidden]="true" data-toggle="modal" data-target="#login-modal"></button>
+
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Agregar familia</h5>
+                </div>
+                <div class="modal-body" >
+                  <input [ngModel]="family.name" id="combo" required='' type='text'>
+                  <a id="dobleModal" #dobleModal data-dismiss="modal" data-toggle="modal" data-target="#search-modal" > <small  id="passwordHelpBlock" class="form-text text-muted" style="margin-left: 5%; width: 22% ">
+                    ¿Ya tienes familia?
+                  </small></a>
+                </div>
+                <div class="modal-footer">
+                  <a routerLink="/inicio"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></a>
+                  <button [ngModel]="cambio()" type="button" class="btn btn-primary" data-dismiss="modal">Crear familia</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Buscar familia</h5>
+                </div>
+                <div class="modal-body" >
+                  <input id="combo" required='' type='search'>
+                </div>
+                <div class="modal-footer">
+                 <a routerLink="/inicio"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></a> 
+                  <button type="button" class="btn btn-primary">Buscar familia</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>

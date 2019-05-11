@@ -1,3 +1,4 @@
+import { FamilyComponent } from './Components/family/family.component';
 import { CareerComponent } from './Components/career/career.component';
 
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'Save-Career-Educative', component: CareerComponent},
   {path: 'Save-Course', component: CoursesComponent},
   {path: 'List-Course', component: CoursesListComponent},
+  {path: 'Add-family', component: FamilyComponent}
 ];
 
 @NgModule({

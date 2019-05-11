@@ -20,7 +20,6 @@ export class CoursesListComponent implements OnInit {
   }
   getCourse(){
     this.rest.getCourse().subscribe(res =>{
-      console.log(res);
       this.curso = res.course
     })
   }

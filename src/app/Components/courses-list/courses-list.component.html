@@ -1,6 +1,6 @@
 <div class="row mt-5">
   <div class="col">
-    <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalShoes" >New Shoes</button>
+    <button type="button" class="btn btn-primary float-right mb-3" routerLink="../Save-Course" >New Curso</button>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -20,9 +20,9 @@
           <td>{{course.code}}</td>
           <td>{{course.name}}</td>
           <td>{{course.description}}</td>
-          <!-- <td *ngIf="shoes.userUid == userUid || isAdmin == true; else noOwner"> 
+          <td > 
             <button class="btn btn-primary" (click)="onPreUpdate(shoes)" data-toggle="modal" data-target="#modalShoes">Update</button>
-          </td> -->
+          </td>
           <ng-template #noOwner>
             <td>
               <a  class="btn btn-primary" disable ="true">Update</a>

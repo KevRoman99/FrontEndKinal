@@ -19,23 +19,25 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
-import { FamilyComponent } from './components/family/family.component';
 import { UnitsComponent } from './components/units/units.component';
 import { from } from 'rxjs';
 import { CareerComponent } from './Components/career/career.component';
 import { CoursesComponent } from './Components/courses/courses.component';
 import { CoursesListComponent } from './Components/courses-list/courses-list.component';
+import { CareersListComponent } from './Components/careers-list/careers-list.component';
+import { FamilyComponent } from './Components/family/family.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PeopleComponent,
-    FamilyComponent,
     UnitsComponent,
     CareerComponent,
     CoursesComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    CareersListComponent,
+    FamilyComponent
   ],
   imports: [
     BrowserModule,

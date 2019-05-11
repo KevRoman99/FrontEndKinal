@@ -54,7 +54,8 @@
         <div class="col md-4">
             <br>
             <form name="form" [formGroup]="form">
-                <input class="form-control" formControlName="description" required='' type='text' [(ngModel)]="course.description" >
+                <input class="form-control" formControlName="description" [ngClass]="{'is-invalid': 
+                form.get('description').touched && form.get('description').invalid}" required='' type='text' [(ngModel)]="course.description">
                 <label alt='Descripcion del Curso' placeholder='Descripcion del Curso'></label>
             </form>
         </div>

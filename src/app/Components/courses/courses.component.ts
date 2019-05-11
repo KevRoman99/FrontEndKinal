@@ -14,6 +14,7 @@ export class CoursesComponent implements OnInit {
   form = new FormGroup({
     name: new FormControl('', Validators.required),
     code: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
   });
   constructor(public rest: CourseService, private toastr: ToastrService) {
     this.rest.setCourse(this.course);

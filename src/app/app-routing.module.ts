@@ -7,13 +7,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { UnitsComponent } from './components/units/units.component';
 import { CoursesComponent } from './Components/courses/courses.component';
 import { CoursesListComponent } from './Components/courses-list/courses-list.component';
+import { CareersListComponent } from './Components/careers-list/careers-list.component';
 
 const routes: Routes = [
   {path: 'Save-Units-Academic', component: UnitsComponent},
   {path: 'Save-Career-Educative', component: CareerComponent},
   {path: 'Save-Course', component: CoursesComponent},
   {path: 'List-Course', component: CoursesListComponent},
-  {path: 'Add-family', component: FamilyComponent}
+  {path: 'Add-family', component: FamilyComponent},
+  {path: 'List-Career', component: CareersListComponent}
 ];
 
 @NgModule({

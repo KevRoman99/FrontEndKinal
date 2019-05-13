@@ -24,12 +24,12 @@
             ],
             "styles": [
               "src/styles.css",
-              "../Front/node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../FrontEndKinal/node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
-              "../Front/node_modules/jquery/dist/jquery.min.js",
-              "../Front/node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "../FrontEndKinal/node_modules/jquery/dist/jquery.min.js",
+              "../FrontEndKinal/node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
             "es5BrowserSupport": true
           },

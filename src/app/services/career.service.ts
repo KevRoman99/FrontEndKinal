@@ -19,7 +19,7 @@ export class CareerService {
   }
 
   getCareer(): Observable<any>{
-    return this.http.get(this.endpoint + 'eductionalcareers').pipe(
+    return this.http.get(this.endpoint + '/List-Career-Educative').pipe(
       map(this.extractData)
     );
   }

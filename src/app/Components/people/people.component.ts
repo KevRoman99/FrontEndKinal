@@ -60,6 +60,7 @@ export class PeopleComponent implements OnInit {
     this.rest.setPerson(this.person).subscribe(res => {
       console.log(res);
     });
+    console.clear();
   }
   addEmail(){
    

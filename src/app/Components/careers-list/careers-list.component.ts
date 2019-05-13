@@ -9,7 +9,7 @@ import { restoreView } from '@angular/core/src/render3';
   styleUrls: ['./careers-list.component.css']
 })
 export class CareersListComponent implements OnInit {
-  career: Career[];
+  carrera: Career[];
   constructor(public rest: CareerService) { }
 
   ngOnInit() {
@@ -18,7 +18,8 @@ export class CareersListComponent implements OnInit {
 
   getCareer(){
     this.rest.getCareer().subscribe(res =>{
-      this.career = res.career;
+      this.carrera = res.career;
+      console.log(this.carrera)
     });
   }
 
